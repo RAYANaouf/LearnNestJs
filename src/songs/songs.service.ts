@@ -13,6 +13,7 @@ export class SongsService {
     }
     
     findAll(){
+        throw new Error('Method not implemented');
         return this.songs;
     }
 }
