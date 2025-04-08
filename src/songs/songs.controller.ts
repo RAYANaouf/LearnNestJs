@@ -24,7 +24,10 @@ export class SongsController {
 
     @Get(":id")
     findOne(
-        @Param('id' , ParseIntPipe) 
+        @Param(
+            'id',
+            new ParseIntPipe({errorHttpStatusCode : HttpStatus.NOT_ACCEPTABLE})
+        ) 
         id: number
     ): string {
         return `This action returns a song by its id : ${typeof id}`;
